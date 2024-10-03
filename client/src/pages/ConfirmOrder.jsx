@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import FadeLoader from "react-spinners/FadeLoader";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import error from "../assets/error.png";
 import success from "../assets/success.png";
+
 const load = async () => {
   return await loadStripe(
     "pk_test_51Nk8Y4F0B89ncn3xWB6ZN3GsbVIVL7Jqfa3jxtIOpPkKHcleHZw4EMPJKd4cRwm34ZARBeYmAWwu3VxyYL1gb6OT00UKNSvfvb"
@@ -71,7 +71,7 @@ const ConfirmOrder = () => {
   }, [message]);
 
   return (
-    <div className="w-screeen h-screen flex justify-center items-center flex-col gap-4">
+    <div className="w-screen h-screen flex justify-center items-center flex-col gap-4">
       {message === "failed" || message === "processing" ? (
         <>
           <img src={error} alt="error logo" />
@@ -84,10 +84,9 @@ const ConfirmOrder = () => {
         </>
       ) : message === "succeeded" ? (
         loader ? (
-          <FadeLoader />
-        ) : (
+          // Show success image if loader is true
           <>
-            <img src={success} alt="error logo" />
+            <img src={success} alt="success logo" />
             <Link
               className="px-5 py-2 bg-green-500 rounded-sm text-white"
               to="/dashboard/my-orders"
@@ -95,9 +94,20 @@ const ConfirmOrder = () => {
               Back to Dashboard
             </Link>
           </>
+        ) : (
+          <></> // Empty fragment as placeholder
         )
       ) : (
-        <FadeLoader />
+        <div className="flex flex-col items-center gap-4">
+          <img src={success} alt="success logo" className="w-32 h-32" />{" "}
+          {/* Adjust size as needed */}
+          <Link
+            className="px-5 py-2 bg-green-500 rounded-md text-white hover:bg-green-600 transition-colors"
+            to="/dashboard/my-orders"
+          >
+            Back to Dashboard
+          </Link>
+        </div>
       )}
     </div>
   );
