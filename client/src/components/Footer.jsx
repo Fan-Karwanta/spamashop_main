@@ -32,25 +32,8 @@ const Footer = () => {
         <div className="w-5/12 lg:w-8/12 sm:w-full">
           <div className="flex justify-center sm:justify-start sm:mt-6 w-full">
             <div>
-              <h2 className="font-bold text-lg mb-2">Usefull links</h2>
+              <h2 className="font-bold text-lg mb-2">Relevant links</h2>
               <div className="flex justify-between gap-[80px] lg:gap-[40px]">
-                <ul className="flex flex-col gap-2 text-slate-600 text-sm">
-                  <li>
-                    <Link>About Us</Link>
-                  </li>
-                  <li>
-                    <Link>About our Shop</Link>
-                  </li>
-                  <li>
-                    <Link>Delivery Information</Link>
-                  </li>
-                  <li>
-                    <Link>Privacy Policy</Link>
-                  </li>
-                  <li>
-                    <Link>Blogs</Link>
-                  </li>
-                </ul>
                 <ul className="flex flex-col gap-2 text-slate-600 text-sm">
                   <li>
                     <Link>About Us</Link>
@@ -131,7 +114,7 @@ const Footer = () => {
           <a
             className="text-blue-500 underline"
             target="_blank"
-            href="https://fankarwanta.com"
+            href="https://fan-port.vercel.app"
           >
             @Fan Karwanta
           </a>

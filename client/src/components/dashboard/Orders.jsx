@@ -80,7 +80,7 @@ const Orders = () => {
                     scope="row"
                     className="px-6 py-4 font-medium whitespace-nowrap"
                   >
-                    ${o.price}
+                    ₱{o.price}
                   </td>
                   <td
                     scope="row"

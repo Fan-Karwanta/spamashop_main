@@ -32,11 +32,11 @@ const Home = () => {
                         <div className='overflow-hidden'>
                             <Products title='Top Rated Product' products={topRated_product} />
                         </div>
-                        {/*
+                        
                         <div className='overflow-hidden'>
-                            <Products title='Discount Product' products={discount_product} />
+                            <Products title='Top Discounted Product' products={discount_product} />
                         </div>
-                         */}
+                         
                     </div>
                 </div>
             </div>
