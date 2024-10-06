@@ -24,7 +24,7 @@ class cardController {
       });
       if (product) {
         responseReturn(res, 404, {
-          error: "Product already added to card",
+          error: "Product already added to cart",
         });
       } else {
         const product = await cardModel.create({

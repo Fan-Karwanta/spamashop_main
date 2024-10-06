@@ -47,9 +47,6 @@ const Footer = () => {
                   <li>
                     <Link>Privacy Policy</Link>
                   </li>
-                  <li>
-                    <Link>Blogs</Link>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -114,7 +111,7 @@ const Footer = () => {
           <a
             className="text-blue-500 underline"
             target="_blank"
-            href="https://fan-port.vercel.app"
+            href="https://fankarwanta.com"
           >
             @Fan Karwanta
           </a>

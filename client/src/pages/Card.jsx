@@ -75,7 +75,7 @@ const Card = () => {
                 <span className="pt-2">
                   <MdOutlineKeyboardArrowRight />
                 </span>
-                <span>Card</span>
+                <span>Cart</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Card = () => {
                   <div className="flex flex-col gap-3">
                     <div className="bg-white p-4">
                       <h2 className="text-md text-green-500 font-semibold">
-                        Stock Products {card_products.length}
+                        Products
                       </h2>
                     </div>
                     {card_products.map((p, i) => (
@@ -260,13 +260,14 @@ const Card = () => {
                     <div className="bg-white p-3 text-slate-600 flex flex-col gap-3">
                       <h2 className="text-xl font-bold">Order Summary</h2>
                       <div className="flex justify-between items-center">
-                        <span>{buy_product_item} Item</span>
+                        <span>{buy_product_item} Item/s</span>
                         <span>₱{price}</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span>Shipping Fee</span>
                         <span>₱{shipping_fee}</span>
                       </div>
+                      {/*
                       <div className="flex gap-2">
                         <input
                           className="w-full px-3 py-2 border border-slate-200 outline-0 focus:border-green-500 rounded-sm"
@@ -276,7 +277,7 @@ const Card = () => {
                         <button className="px-5 py-[1px] bg-blue-500 text-white rounded-sm uppercase text-sm">
                           Apply
                         </button>
-                      </div>
+                      </div> */}
                       <div className="flex justify-between items-center">
                         <span>Total</span>
                         <span className="text-lg text-orange-500">
@@ -287,7 +288,7 @@ const Card = () => {
                         onClick={redirect}
                         className="px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-orange-500 text-sm text-white uppercase"
                       >
-                        Proceed to checkout {buy_product_item}
+                        Proceed to checkout {buy_product_item} Products
                       </button>
                     </div>
                   )}
