@@ -121,7 +121,7 @@ const SellerDetails = () => {
                 >
                   <option value="">--select status--</option>
                   <option value="active">Active</option>
-                  <option value="deactive">Deactive</option>
+                  <option value="deactive">Deactivate</option>
                 </select>
                 <button className="bg-blue-500 hover:shadow-blue-500/50 hover:shadow-lg text-white rounded-md px-7 py-2 w-[170px] ">
                   Submit
