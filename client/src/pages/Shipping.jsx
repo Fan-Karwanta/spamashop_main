@@ -22,6 +22,7 @@ const Shipping = () => {
     province: "",
     city: "",
     area: "",
+    affiliation_area: "", // Added this field
   });
   const inputHandle = (e) => {
     setState({
@@ -31,11 +32,30 @@ const Shipping = () => {
   };
   const save = (e) => {
     e.preventDefault();
-    const { name, address, phone, post, province, city, area } = state;
-    if (name && address && phone && post && province && city && area) {
+    const {
+      name,
+      address,
+      phone,
+      post,
+      province,
+      city,
+      area,
+      affiliation_area,
+    } = state;
+    if (
+      name &&
+      address &&
+      phone &&
+      post &&
+      province &&
+      city &&
+      area &&
+      affiliation_area
+    ) {
       setRes(true);
     }
   };
+
   const placeOrder = () => {
     dispatch(
       place_order({
@@ -101,7 +121,7 @@ const Shipping = () => {
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
                               name="address"
-                              placeholder="House no / building / strreet /area"
+                              placeholder="House no / building / street /area"
                               id="address"
                             />
                           </div>
@@ -120,14 +140,16 @@ const Shipping = () => {
                             />
                           </div>
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="post">Post</label>
+                            <label htmlFor="post">
+                              ZIP Code (Malita = 8012)
+                            </label>
                             <input
                               onChange={inputHandle}
                               value={state.post}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
                               name="post"
-                              placeholder="post"
+                              placeholder="Type 8012"
                               id="post"
                             />
                           </div>
@@ -160,17 +182,41 @@ const Shipping = () => {
                         </div>
                         <div className="flex md:flex-col md:gap-2 w-full gap-5 text-slate-600">
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="area">Area</label>
+                            <label htmlFor="area">Other location Info</label>
                             <input
                               onChange={inputHandle}
                               value={state.area}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
                               name="area"
-                              placeholder="area"
+                              placeholder="other location info (e.g landmarks)"
                               id="province"
                             />
                           </div>
+
+                          <div className="flex flex-col gap-1 mb-2 w-full">
+                            <label htmlFor="affiliation_area">
+                              Affiliation Area
+                            </label>
+                            <select
+                              onChange={inputHandle}
+                              value={state.affiliation_area}
+                              name="affiliation_area"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                            >
+                              <option value="">Select Area</option>
+                              <option value="Poblacion_affiliate">
+                                Poblacion
+                              </option>
+                              <option value="Buhangin_affiliate">
+                                Buhangin
+                              </option>
+                              <option value="Kidalapong_affiliate">
+                                Kidalapong
+                              </option>
+                            </select>
+                          </div>
+                          <br></br>
                           <div className="flex flex-col gap-1 mt-3 w-full">
                             <button className="px-3 py-[6px] rounded-sm hover:shadow-indigo-500/20 hover:shadow-lg bg-indigo-500 text-white">
                               Save
@@ -191,7 +237,7 @@ const Shipping = () => {
                         </span>
                         <span className="text-slate-600 text-sm">
                           {state.address} {state.province} {state.city}{" "}
-                          {state.area}
+                          {state.area} ({state.affiliation_area})
                         </span>
                         <span
                           onClick={() => setRes(false)}
