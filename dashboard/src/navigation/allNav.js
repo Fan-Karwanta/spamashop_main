@@ -120,7 +120,7 @@ export const allNav = [
   },
   {
     id: 16,
-    title: "Chat Support",
+    title: "Chat Admin",
     icon: <CiChat1 />,
     role: "seller",
     path: "/seller/dashboard/chat-support",

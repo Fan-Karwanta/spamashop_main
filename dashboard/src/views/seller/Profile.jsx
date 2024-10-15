@@ -165,13 +165,13 @@ const Profile = () => {
                     />
                   </div>
                   <div className="flex flex-col w-full gap-1 mb-3">
-                    <label htmlFor="sub">Sub District</label>
+                    <label htmlFor="sub">Affiliation Area</label>
                     <input
                       value={state.sub_district}
                       onChange={inputHandle}
                       className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                       type="text"
-                      placeholder="sub district"
+                      placeholder="Affiliation Area"
                       name="sub_district"
                       id="sub"
                     />
