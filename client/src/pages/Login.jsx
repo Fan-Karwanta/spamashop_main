@@ -87,7 +87,7 @@ const Login = () => {
                       placeholder="password"
                     />
                   </div>
-                  <button className="px-8 w-full py-2 bg-purple-500 shadow-lg hover:shadow-indigo-500/30 text-white rounded-md">
+                  <button className="px-8 w-full py-2 bg-green-500 shadow-lg hover:shadow-indigo-500/30 text-white rounded-md">
                     Login
                   </button>
                 </form>
@@ -109,7 +109,7 @@ const Login = () => {
               <div className="text-center text-slate-600 pt-1">
                 <p>
                   You have no account ?{" "}
-                  <Link className="text-blue-500" to="/register">
+                  <Link className="text-blue-500 font-bold" to="/register">
                     Register
                   </Link>
                 </p>
