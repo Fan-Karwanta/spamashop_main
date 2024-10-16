@@ -43,7 +43,10 @@ const Login = () => {
     <div className="min-w-screen min-h-screen bg-[#161d31] flex justify-center items-center">
       <div className="w-[350px] text-[#d0d2d6] p-2">
         <div className="bg-[#283046] p-4 rounded-md">
-          <h2 className="text-xl mb-3">Welcome to SPAMASHOP DASHBOARD</h2>
+          <h2 className="text-xl mb-3 font-bold">
+            Welcome to <br />
+            SPAMASHOP DASHBOARD
+          </h2>
           <p className="text-sm mb-3">
             Please Login Your Seller Account Details to have Access to Seller
             Dashboard
@@ -87,9 +90,13 @@ const Login = () => {
             </button>
             <div className="flex items-center mb-3 gap-3 justify-center">
               <p>
-                Not Registered Yet? <Link to="/register">Register here</Link>
+                Not Registered Yet?{" "}
+                <Link className="text-green-500 font-bold" to="/register">
+                  Register As Seller
+                </Link>
               </p>
             </div>
+            {/*
             <div className="w-full flex justify-center items-center mb-3">
               <div className="w-[45%] bg-slate-700 h-[1px]"></div>
               <div className="w-[10%] flex justify-center items-center">
@@ -118,7 +125,7 @@ const Login = () => {
                   <AiOutlineGithub />
                 </span>
               </div>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>

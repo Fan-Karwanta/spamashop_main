@@ -101,7 +101,7 @@ const SellerDetails = () => {
                     <span>{seller?.shopInfo?.district}</span>
                   </div>
                   <div className="flex gap-2">
-                    <span>Sub-District : </span>
+                    <span>Affiliation Area : </span>
                     <span>{seller?.shopInfo?.sub_district}</span>
                   </div>
                 </div>
