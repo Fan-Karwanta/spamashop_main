@@ -44,7 +44,7 @@ const Login = () => {
       <div className="w-[350px] text-[#d0d2d6] p-2">
         <div className="bg-[#283046] p-4 rounded-md">
           <h2 className="text-xl mb-3 font-bold">
-            Welcome to <br />
+            Welcome To <br />
             SPAMASHOP DASHBOARD
           </h2>
           <p className="text-sm mb-3">
@@ -52,7 +52,7 @@ const Login = () => {
             Dashboard
           </p>
           <form onSubmit={submit}>
-            <div className="flex flex-col w-full gap-1 mb-3">
+            <div className="flex flex-col w-full gap-1 mb-3 font-bold text-green-500">
               <label htmlFor="email">Email</label>
               <input
                 onChange={inputHandle}
@@ -65,7 +65,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="flex flex-col w-full gap-1 mb-5">
+            <div className="flex flex-col w-full gap-1 mb-3 font-bold text-green-500">
               <label htmlFor="password">Password</label>
               <input
                 onChange={inputHandle}
@@ -88,14 +88,15 @@ const Login = () => {
                 "Login"
               )}
             </button>
+            {/*
             <div className="flex items-center mb-3 gap-3 justify-center">
               <p>
                 Not Registered Yet?{" "}
                 <Link className="text-green-500 font-bold" to="/register">
                   Register As Seller
-                </Link>
+                </Link> 
               </p>
-            </div>
+            </div> */}
             {/*
             <div className="w-full flex justify-center items-center mb-3">
               <div className="w-[45%] bg-slate-700 h-[1px]"></div>
