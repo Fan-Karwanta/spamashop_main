@@ -250,8 +250,9 @@ const Headers = () => {
             <Link to="/">
               <img src="http://localhost:3000/images/logo.png" alt="logo" />
             </Link>
+            
             <div className="flex justify-star items-center gap-10">
-              <div className="flex group cursor-pointer text-slate-800 text-sm justify-center items-center gap-1 relative after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px] after:absolute">
+              {/*<div className="flex group cursor-pointer text-slate-800 text-sm justify-center items-center gap-1 relative after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px] after:absolute">
                 <img src="http://localhost:3000/images/language.png" alt="" />
                 <span>
                   <MdOutlineKeyboardArrowDown />
@@ -260,7 +261,7 @@ const Headers = () => {
                   <li>Bangla</li>
                   <li>English</li>
                 </ul>
-              </div>
+              </div> */}
               {userInfo ? (
                 <Link
                   className="flex cursor-pointer justify-center items-center gap-2 text-sm"
@@ -365,7 +366,7 @@ const Headers = () => {
                 <span>
                   <GrMail />
                 </span>
-                <span>learnwithproject@gmail.com</span>
+                <span>spamashop@gmail.com</span>
               </li>
               <span className="text-sm">SPAMASHOP</span>
             </ul>
