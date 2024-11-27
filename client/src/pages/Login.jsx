@@ -69,7 +69,7 @@ const Login = () => {
                       onChange={inputHandle}
                       value={state.email}
                       type="email"
-                      className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                      className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                       id="email"
                       name="email"
                       placeholder="email"
@@ -81,13 +81,13 @@ const Login = () => {
                       onChange={inputHandle}
                       value={state.password}
                       type="password"
-                      className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                      className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                       id="password"
                       name="password"
                       placeholder="password"
                     />
                   </div>
-                  <button className="px-8 w-full py-2 bg-green-500 shadow-lg hover:shadow-indigo-500/30 text-white rounded-md">
+                  <button className="px-8 w-full py-2 bg-green-500 shadow-lg hover:shadow-green-500/30 text-white rounded-md">
                     Login
                   </button>
                 </form>
@@ -97,7 +97,7 @@ const Login = () => {
                   <div className="h-[1px] bg-slate-300 w-[95%]"></div>
                 </div>
                 {/*
-                                <button className='px-8 w-full py-2 bg-indigo-500 shadow hover:shadow-indigo-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
+                                <button className='px-8 w-full py-2 bg-green-500 shadow hover:shadow-green-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
                                     <span><FaFacebookF /></span>
                                     <span>Login with Facebook</span>
                                 </button>

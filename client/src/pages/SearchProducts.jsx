@@ -102,7 +102,7 @@ const SearchProducts = () => {
           <div className={`md:block hidden ${!filter ? "mb-6" : "mb-0"}`}>
             <button
               onClick={() => setFilter(!filter)}
-              className="text-center w-full py-2 px-3 bg-indigo-500 text-white"
+              className="text-center w-full py-2 px-3 bg-green-500 text-white"
             >
               Filter Product
             </button>

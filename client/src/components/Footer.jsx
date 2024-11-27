@@ -64,7 +64,7 @@ const Footer = () => {
                 className="h-full bg-transparent w-full px-3 outline-0"
                 type="text"
               />
-              <button className="h-full absolute right-0 bg-indigo-500 text-white uppercase px-4 font-bold text-sm">
+              <button className="h-full absolute right-0 bg-green-500 text-white uppercase px-4 font-bold text-sm">
                 Subscribe
               </button>
             </div>

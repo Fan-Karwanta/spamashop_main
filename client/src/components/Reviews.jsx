@@ -159,11 +159,11 @@ const Reviews = ({ product }) => {
             <form onSubmit={review_submit}>
               <textarea value={re} required onChange={(e) => setRe(e.target.value)} className='border outline-0 p-3 w-full' name="" id="" cols="30" rows="5"></textarea>
               <div className='mt-2'>
-                <button className='py-1 px-5 bg-indigo-500 text-white rounded-sm'>Submit</button>
+                <button className='py-1 px-5 bg-green-500 text-white rounded-sm'>Submit</button>
               </div>
             </form>
           </div> : <div>
-            <Link className='py-1 px-5 bg-indigo-500 text-white rounded-sm' to='/login'>Login</Link>
+            <Link className='py-1 px-5 bg-green-500 text-white rounded-sm' to='/login'>Login</Link>
           </div>
         }
       </div>

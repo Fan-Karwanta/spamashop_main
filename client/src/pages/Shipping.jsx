@@ -107,7 +107,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.name}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="name"
                               placeholder="name"
                               id="name"
@@ -119,7 +119,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.address}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="address"
                               placeholder="House no / building / street /area"
                               id="address"
@@ -133,7 +133,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.phone}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="phone"
                               placeholder="phone"
                               id="phone"
@@ -147,7 +147,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.post}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="post"
                               placeholder="Type 8012"
                               id="post"
@@ -161,7 +161,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.province}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="province"
                               placeholder="province"
                               id="province"
@@ -173,7 +173,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.city}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="city"
                               placeholder="city"
                               id="city"
@@ -187,7 +187,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.area}
                               type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="area"
                               placeholder="other location info (e.g landmarks)"
                               id="province"
@@ -202,7 +202,7 @@ const Shipping = () => {
                               onChange={inputHandle}
                               value={state.affiliation_area}
                               name="affiliation_area"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md"
+                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                             >
                               <option value="">Select Area</option>
                               <option value="Poblacion_affiliate">
@@ -218,7 +218,7 @@ const Shipping = () => {
                           </div>
                           <br></br>
                           <div className="flex flex-col gap-1 mt-3 w-full">
-                            <button className="px-3 py-[6px] rounded-sm hover:shadow-indigo-500/20 hover:shadow-lg bg-indigo-500 text-white">
+                            <button className="px-3 py-[6px] rounded-sm hover:shadow-green-500/20 hover:shadow-lg bg-green-500 text-white">
                               Save
                             </button>
                           </div>
@@ -241,7 +241,7 @@ const Shipping = () => {
                         </span>
                         <span
                           onClick={() => setRes(false)}
-                          className="text-indigo-500 cursor-pointer"
+                          className="text-green-500 cursor-pointer"
                         >
                           {" "}
                           change

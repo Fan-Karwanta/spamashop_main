@@ -299,7 +299,7 @@ const Details = () => {
                   <ul className="flex justify-start items-center gap-3">
                     <li>
                       <a
-                        className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-indigo-500 rounded-full text-white"
+                        className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-green-500 rounded-full text-white"
                         href="#"
                       >
                         <FaFacebookF />

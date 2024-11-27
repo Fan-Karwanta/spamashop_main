@@ -36,7 +36,7 @@ const Dashboard = () => {
             <div className='bg-slate-200 mt-5'>
                 <div className='w-[90%] mx-auto pt-5 md-lg:block hidden'>
                     <div>
-                        <button onClick={() => setFilterShow(!filterShow)} className='text-center py-3 px-3 bg-indigo-500 text-white'>
+                        <button onClick={() => setFilterShow(!filterShow)} className='text-center py-3 px-3 bg-green-500 text-white'>
                             <FaList />
                         </button>
                     </div>
