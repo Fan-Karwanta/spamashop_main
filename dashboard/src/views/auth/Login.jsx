@@ -57,7 +57,7 @@ const Login = () => {
               <input
                 onChange={inputHandle}
                 value={state.email}
-                className="px-3 py-2 outline-none border border-slate-700 bg-transparent rounded-md text-[#d0d2d6] focus:border-indigo-500 overflow-hidden"
+                className="px-3 py-2 outline-none border border-slate-700 bg-transparent rounded-md text-[#d0d2d6] focus:border-green-500 overflow-hidden"
                 type="text"
                 name="email"
                 placeholder="email"
@@ -70,7 +70,7 @@ const Login = () => {
               <input
                 onChange={inputHandle}
                 value={state.password}
-                className="px-3 py-2 outline-none border border-slate-700 bg-transparent rounded-md text-[#d0d2d6] focus:border-indigo-500 overflow-hidden"
+                className="px-3 py-2 outline-none border border-slate-700 bg-transparent rounded-md text-[#d0d2d6] focus:border-green-500 overflow-hidden"
                 type="password"
                 name="password"
                 placeholder="password"
@@ -111,7 +111,7 @@ const Login = () => {
                   <AiOutlineGooglePlus />
                 </span>
               </div>
-              <div className="w-[35px] h-[35px] flex rounded-md bg-indigo-700 shadow-lg hover:shadow-indigo-700/50 justify-center cursor-pointer items-center overflow-hidden">
+              <div className="w-[35px] h-[35px] flex rounded-md bg-green-700 shadow-lg hover:shadow-green-700/50 justify-center cursor-pointer items-center overflow-hidden">
                 <span>
                   <FiFacebook />
                 </span>

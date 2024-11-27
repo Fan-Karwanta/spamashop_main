@@ -125,8 +125,8 @@ const Payments = () => {
                     <div className='py-5'>
                         <form onSubmit={sendRequest}>
                             <div className='flex gap-3 flex-wrap'>
-                                <input onChange={(e) => setAmount(e.target.value)} required value={amount} min='0' type="number" className='px-3 md:w-[79%] py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' name='amount' />
-                                <button disabled={loader} className='bg-indigo-500 hover:shadow-indigo-500/50 hover:shadow-lg text-white rounded-sm px-4 py-2 text-sm '>{loader ? 'loading..' : 'Submit'}</button>
+                                <input onChange={(e) => setAmount(e.target.value)} required value={amount} min='0' type="number" className='px-3 md:w-[79%] py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' name='amount' />
+                                <button disabled={loader} className='bg-green-500 hover:shadow-green-500/50 hover:shadow-lg text-white rounded-sm px-4 py-2 text-sm '>{loader ? 'loading..' : 'Submit'}</button>
                             </div>
                         </form>
                     </div>

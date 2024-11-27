@@ -51,7 +51,7 @@ const OrderDetails = () => {
             value={status}
             name=""
             id=""
-            className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+            className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
           >
             <option value="pending">Pending</option>
             <option value="processing">Processing</option>

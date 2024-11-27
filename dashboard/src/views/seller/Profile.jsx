@@ -71,7 +71,7 @@ const Profile = () => {
                 </label>
               ) : (
                 <label
-                  className="flex justify-center items-center flex-col h-[210px] w-[300px] cursor-pointer border border-dashed hover:border-indigo-500 border-[#d0d2d6] relative"
+                  className="flex justify-center items-center flex-col h-[210px] w-[300px] cursor-pointer border border-dashed hover:border-green-500 border-[#d0d2d6] relative"
                   htmlFor="img"
                 >
                   <span>
@@ -133,7 +133,7 @@ const Profile = () => {
                     <input
                       value={state.shopName}
                       onChange={inputHandle}
-                      className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                      className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                       type="text"
                       placeholder="shop name"
                       name="shopName"
@@ -145,7 +145,7 @@ const Profile = () => {
                     <input
                       value={state.division}
                       onChange={inputHandle}
-                      className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                      className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                       type="text"
                       placeholder="division"
                       name="division"
@@ -157,7 +157,7 @@ const Profile = () => {
                     <input
                       value={state.district}
                       onChange={inputHandle}
-                      className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                      className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                       type="text"
                       placeholder="district"
                       name="district"
@@ -169,7 +169,7 @@ const Profile = () => {
                     <input
                       value={state.sub_district}
                       onChange={inputHandle}
-                      className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                      className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                       type="text"
                       placeholder="Affiliation Area"
                       name="sub_district"
@@ -224,7 +224,7 @@ const Profile = () => {
                 <div className="flex flex-col w-full gap-1 mb-3">
                   <label htmlFor="email">Email</label>
                   <input
-                    className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                    className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                     type="email"
                     placeholder="email"
                     name="email"
@@ -234,7 +234,7 @@ const Profile = () => {
                 <div className="flex flex-col w-full gap-1">
                   <label htmlFor="o_password">Old Password</label>
                   <input
-                    className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                    className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                     type="password"
                     placeholder="old password"
                     name="old_password"
@@ -244,7 +244,7 @@ const Profile = () => {
                 <div className="flex flex-col w-full gap-1">
                   <label htmlFor="n_password">New Password</label>
                   <input
-                    className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
+                    className="px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                     type="password"
                     placeholder="new password"
                     name="new_password"

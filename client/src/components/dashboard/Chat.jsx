@@ -18,8 +18,7 @@ const Chat = () => {
     const [text, setText] = useState('');
     const [receverMessage, setReceverMessage] = useState('');
     const [activeSeller, setActiveSeller] = useState([]);
-    const [show, setShow] = useState(false); // Toggle chat sidebar visibility
-    const [showSidebarImage, setShowSidebarImage] = useState(true); // Toggle specific sidebar image visibility
+    const [show, setShow] = useState(false);
 
     const { userInfo } = useSelector(state => state.auth);
     const { fd_messages, currentFd, my_friends, successMessage } = useSelector(state => state.chat);
@@ -68,7 +67,7 @@ const Chat = () => {
             if (sellerId === receverMessage.senderId && userInfo.id === receverMessage.receverId) {
                 dispatch(updateMessage(receverMessage));
             } else {
-                toast.success(receverMessage.senderName + " " + "sent a message");
+                toast.success(receverMessage.senderName + " sent a message");
                 dispatch(messageClear());
             }
         }
@@ -80,7 +79,6 @@ const Chat = () => {
 
     const toggleChatSidebar = () => {
         setShow(!show);
-        setShowSidebarImage(!showSidebarImage); // Toggles the specific sidebar image
     };
 
     return (
@@ -88,18 +86,9 @@ const Chat = () => {
             <div className='w-full flex relative'>
                 {/* Sidebar */}
                 <div className={`w-[230px] md-lg:absolute bg-white transition-all md-lg:h-full ${show ? 'left-0' : '-left-[350px]'} `}>
-                    <div className='flex justify-center gap-1 items-center text-slate-600 text-small h-[50px] font-bold gap-5'>
+                    <div className='flex justify-center gap-2 items-center text-slate-600 text-small h-[50px] font-bold gap-1'>
                         <AiOutlineMessage />
                         <span>Select a Seller</span>
-                        <span>
-                            {showSidebarImage && (
-                                <img
-                                    src="https://spamashop.vercel.app/images/user.png"
-                                    alt="Sidebar User"
-                                    className='w-[30px] h-[30px] rounded-full'
-                                />
-                            )}
-                        </span>
                         <span><BsXSquare onClick={toggleChatSidebar} className='bg-red-500 w-[20px] h-[20px] cursor-pointer' /></span>
                     </div>
                     <div className='w-full flex flex-col text-slate-600 py-4 h-[400px] pr-3'>
@@ -142,14 +131,16 @@ const Chat = () => {
                                             key={i}
                                             ref={scrollRef}
                                             className={`w-full flex gap-2 ${
-                                                currentFd?.fdId !== m.receverId ? 'justify-start' : 'justify-end'
+                                                userInfo.id === m.senderId ? 'justify-end' : 'justify-start'
                                             } items-center text-[14px]`}
                                         >
-                                            <img className='w-[30px] h-[30px]' src="https://spamashop.vercel.app/images/user.png" alt="Message Avatar" />
+                                            {userInfo.id !== m.senderId && (
+                                                <img className='w-[30px] h-[30px]' src="https://spamashop.vercel.app/images/user.png" alt="Seller Avatar" />
+                                            )}
                                             <div
                                                 className={`p-2 ${
-                                                    currentFd?.fdId !== m.receverId ? 'bg-yellow-500' : 'bg-green-600'
-                                                } text-white rounded-md`}
+                                                    userInfo.id === m.senderId ? 'bg-green-600' : 'bg-yellow-500'
+                                                } text-white rounded-md shadow-lg`}
                                             >
                                                 <span>{m.message}</span>
                                             </div>
@@ -183,7 +174,7 @@ const Chat = () => {
                         </div>
                     ) : (
                         <div onClick={toggleChatSidebar} className='w-full flex justify-center items-center text-lg font-bold text-slate-600 h-[400px]'>
-                            <span>Select </span>
+                            <span>Select Seller</span>
                         </div>
                     )}
                 </div>

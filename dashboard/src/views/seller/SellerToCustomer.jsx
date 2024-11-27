@@ -127,7 +127,7 @@ const SellerToCustomer = () => {
                                                         <div>
                                                             <img className='w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]' src="http://localhost:3001/images/admin.jpg" alt="" />
                                                         </div>
-                                                        <div className='flex justify-center items-start flex-col w-full bg-orange-500 shadow-lg shadow-orange-500/50 text-white py-1 px-2 rounded-sm'>
+                                                        <div className='flex justify-center items-start flex-col w-full bg-yellow-600 shadow-lg shadow-yellow-600/50 text-white py-1 px-2 rounded-sm'>
                                                             <span>{m.message}</span>
                                                         </div>
                                                     </div>
@@ -137,7 +137,7 @@ const SellerToCustomer = () => {
                                             return (
                                                 <div ref={scrollRef} key={i} className='w-full flex justify-end items-center'>
                                                     <div className='flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]'>
-                                                        <div className='flex justify-center items-start flex-col w-full bg-blue-500 shadow-lg shadow-blue-500/50 text-white py-1 px-2 rounded-sm'>
+                                                        <div className='flex justify-center items-start flex-col w-full bg-green-600 shadow-lg shadow-green-600/50 text-white py-1 px-2 rounded-sm'>
                                                             <span>{m.message}</span>
                                                         </div>
                                                         <div>
@@ -157,7 +157,7 @@ const SellerToCustomer = () => {
                         </div>
                         <form onSubmit={send} className='flex gap-3'>
                             <input readOnly={customerId ? false : true} onChange={(e) => setText(e.target.value)} value={text} className='w-full flex justify-between px-2 border border-slate-700 items-center py-[5px] focus:border-blue-500 rounded-md outline-none bg-transparent text-[#d0d2d6]' type="text" placeholder='input your message' />
-                            <button disabled={customerId ? false : true} className='shadow-lg bg-cyan-500 hover:shadow-cyan-500/50 text-semibold w-[75px] h-[35px] rounded-md text-white flex justify-center items-center'>Send</button>
+                            <button disabled={customerId ? false : true} className='shadow-lg bg-green-500 hover:shadow-green-500/50 font-semibold w-[75px] h-[35px] rounded-md text-white flex justify-center items-center'>Send</button>
                         </form>
                     </div>
                 </div>

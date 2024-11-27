@@ -66,7 +66,7 @@ const Category = () => {
         <div className='px-2 lg:px-7 pt-5'>
             <div className='flex lg:hidden justify-between items-center mb-5 p-4 bg-[#283046] rounded-md'>
                 <h1 className='text-[#d0d2d6] font-semibold text-lg'>Categorys</h1>
-                <button onClick={() => setShow(true)} className='bg-indigo-500 shadow-lg hover:shadow-indigo-500/50 px-4 py-2 cursor-pointer text-white rounded-sm text-sm'>Add</button>
+                <button onClick={() => setShow(true)} className='bg-green-500 shadow-lg hover:shadow-green-500/50 px-4 py-2 cursor-pointer text-white rounded-sm text-sm'>Add</button>
             </div>
             <div className='flex flex-wrap w-full'>
                 <div className='w-full lg:w-7/12'>
@@ -124,11 +124,11 @@ const Category = () => {
                             <form onSubmit={add_category}>
                                 <div className='flex flex-col w-full gap-1 mb-3'>
                                     <label htmlFor="name">Category name</label>
-                                    <input value={state.name} onChange={(e) => setState({ ...state, name: e.target.value })} className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' type="text" id='name' name='category_name' placeholder='category name' required />
+                                    <input value={state.name} onChange={(e) => setState({ ...state, name: e.target.value })} className='px-4 py-2 focus:border-green-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]' type="text" id='name' name='category_name' placeholder='category name' required />
                                 </div>
                                 <div>
 
-                                    <label className='flex justify-center items-center flex-col h-[238px] cursor-pointer border border-dashed hover:border-indigo-500 w-full border-[#d0d2d6]' htmlFor="image">
+                                    <label className='flex justify-center items-center flex-col h-[238px] cursor-pointer border border-dashed hover:border-green-500 w-full border-[#d0d2d6]' htmlFor="image">
                                         {
                                             imageShow ? <img className='w-full h-full' src={imageShow} /> : <>
                                                 <span><BsImage /></span>
