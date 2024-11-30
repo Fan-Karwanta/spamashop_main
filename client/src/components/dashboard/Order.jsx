@@ -16,20 +16,21 @@ const Order = () => {
   return (
     <div className="bg-white p-5">
       <h2 className="text-slate-600 font-semibold">
-        #{myOrder._id} , <span className="pl-1">{myOrder.date}</span>
+        Order ID: {myOrder._id} 
       </h2>
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-1">
           <h2 className="text-slate-600 font-semibold">
-            Deliver to: {myOrder.shippingInfo?.name}
-          </h2>
+            Date of Order: {myOrder.date}
+          </h2> 
           <p>
-            <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
-              Home
+            <span className="bg-yellow-200 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+              Address
             </span>
+            <br />
             <span className="text-slate-600 text-sm">
-              {myOrder.shippingInfo?.address} {myOrder.shippingInfo?.province}{" "}
-              {myOrder.shippingInfo?.city} {myOrder.shippingInfo?.area}
+            {myOrder.shippingInfo?.area}, {myOrder.shippingInfo?.address}, {myOrder.shippingInfo?.city}, {myOrder.shippingInfo?.province}{" "}
+              
             </span>
           </p>
           <p className="text-slate-600 text-sm font-semibold">
@@ -37,7 +38,7 @@ const Order = () => {
           </p>
         </div>
         <div className="text-slate-600">
-          <h2>Price: ₱{myOrder.price} include shipping fee</h2>
+          <h2>Price: ₱{myOrder.price}</h2>
           <p>
             Payment Status:{" "}
             <span
@@ -80,16 +81,19 @@ const Order = () => {
                     <Link>{p.name}</Link>
                     <p>
                       <span>Brand: {p.brand}</span>
-                      <span>Quantity: {p.quantity}</span>
+                      
+                    </p>
+                    <p>
+                    <span>Quantity: {p.quantity}</span>
                     </p>
                   </div>
                 </div>
                 <div className="pl-4">
-                  <h2 className="text-md text-orange-500">
-                  ₱{p.price - Math.floor((p.price * p.discount) / 100)}
-                  </h2>
                   <p>{p.price}</p>
                   <p>-{p.discount}%</p>
+                  <h2 className="text-md text-green-500">
+                  ₱{p.price - Math.floor((p.price * p.discount) / 100)}
+                  </h2>
                 </div>
               </div>
             </div>

@@ -134,7 +134,7 @@ class cardController {
         card_products: p,
         price: calculatePrice,
         card_product_count,
-        shipping_fee: 85 * p.length,
+        shipping_fee: 0 * p.length,
         outOfStockProduct,
         buy_product_item,
       });

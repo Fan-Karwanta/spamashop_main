@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Headers from "../components/Headers";
 import Footer from "../components/Footer";
 import { useLocation, Link, useNavigate } from "react-router-dom";
@@ -18,9 +18,9 @@ const Shipping = () => {
     name: "",
     address: "",
     phone: "",
-    post: "",
-    province: "",
-    city: "",
+    post: "8012", // Pre-filled ZIP Code
+    province: "Davao Occidental", // Pre-filled Province
+    city: "Malita", // Pre-filled City
     area: "",
     affiliation_area: "", // Added this field
   });
@@ -102,101 +102,77 @@ const Shipping = () => {
                       <form onSubmit={save}>
                         <div className="flex md:flex-col md:gap-2 w-full gap-5 text-slate-600">
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Name *</label>
                             <input
                               onChange={inputHandle}
                               value={state.name}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="name"
-                              placeholder="name"
+                              placeholder="Ex. Juan Dela Cruz"
                               id="name"
                             />
                           </div>
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="address">Address</label>
+                            <label htmlFor="address">Address *</label>
                             <input
                               onChange={inputHandle}
                               value={state.address}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="address"
-                              placeholder="House no / building / street /area"
+                              placeholder="Ex. San Miguel, Poblacion"
                               id="address"
                             />
                           </div>
                         </div>
                         <div className="flex md:flex-col md:gap-2 w-full gap-5 text-slate-600">
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="phone">Phone</label>
+                            <label htmlFor="phone">Phone *</label>
                             <input
                               onChange={inputHandle}
                               value={state.phone}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="phone"
-                              placeholder="phone"
+                              placeholder="Ex. 09123456789"
                               id="phone"
                             />
                           </div>
-                          <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="post">
-                              ZIP Code (Malita = 8012)
-                            </label>
-                            <input
-                              onChange={inputHandle}
-                              value={state.post}
-                              type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
-                              name="post"
-                              placeholder="Type 8012"
-                              id="post"
-                            />
-                          </div>
+                          {/* Hidden input fields for pre-filled location information */}
+                          <input
+                            type="hidden"
+                            name="post"
+                            value={state.post}
+                          />
+                          <input
+                            type="hidden"
+                            name="province"
+                            value={state.province}
+                          />
+                          <input
+                            type="hidden"
+                            name="city"
+                            value={state.city}
+                          />
                         </div>
                         <div className="flex md:flex-col md:gap-2 w-full gap-5 text-slate-600">
                           <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="province">Province</label>
-                            <input
-                              onChange={inputHandle}
-                              value={state.province}
-                              type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
-                              name="province"
-                              placeholder="province"
-                              id="province"
-                            />
-                          </div>
-                          <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="city">City</label>
-                            <input
-                              onChange={inputHandle}
-                              value={state.city}
-                              type="text"
-                              className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
-                              name="city"
-                              placeholder="city"
-                              id="city"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex md:flex-col md:gap-2 w-full gap-5 text-slate-600">
-                          <div className="flex flex-col gap-1 mb-2 w-full">
-                            <label htmlFor="area">Other location Info</label>
+                            <label htmlFor="area">Specific location Info *</label>
                             <input
                               onChange={inputHandle}
                               value={state.area}
                               type="text"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                               name="area"
-                              placeholder="other location info (e.g landmarks)"
-                              id="province"
+                              placeholder="Ex. Near GKK Chapel"
+                              id="area"
                             />
                           </div>
 
                           <div className="flex flex-col gap-1 mb-2 w-full">
                             <label htmlFor="affiliation_area">
-                              Affiliation Area
+                              Barangay *
                             </label>
                             <select
                               onChange={inputHandle}
@@ -204,7 +180,7 @@ const Shipping = () => {
                               name="affiliation_area"
                               className="w-full px-3 py-2 border border-slate-200 outline-none focus:border-green-500 rounded-md"
                             >
-                              <option value="">Select Area</option>
+                              <option value="">Select Brgy.</option>
                               <option value="Poblacion_affiliate">
                                 Poblacion
                               </option>
@@ -218,10 +194,27 @@ const Shipping = () => {
                           </div>
                           <br></br>
                           <div className="flex flex-col gap-1 mt-3 w-full">
-                            <button className="px-3 py-[6px] rounded-sm hover:shadow-green-500/20 hover:shadow-lg bg-green-500 text-white">
+                            <button
+                              type="submit"
+                              className={`px-3 py-[6px] rounded-sm hover:shadow-green-500/20 hover:shadow-lg text-white ${
+                                state.name && state.address && state.phone && state.area && state.affiliation_area
+                                  ? "bg-green-500"
+                                  : "bg-green-300 cursor-not-allowed"
+                              }`}
+                              disabled={
+                                !(
+                                  state.name &&
+                                  state.address &&
+                                  state.phone &&
+                                  state.area &&
+                                  state.affiliation_area
+                                )
+                              }
+                            >
                               Save
                             </button>
                           </div>
+
                         </div>
                       </form>
                     </>
@@ -232,23 +225,25 @@ const Shipping = () => {
                         Deliver to {state.name}
                       </h2>
                       <p>
-                        <span className="bg-blue-200 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
-                          Home
-                        </span>
+                        <span className="bg-yellow-200 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+                          Delivery Information
+                        </span> <br />
                         <span className="text-slate-600 text-sm">
-                          {state.address} {state.province} {state.city}{" "}
-                          {state.area} ({state.affiliation_area})
+                         {state.area}, {state.address} , {state.city}, {" "} {state.province}
+      
                         </span>
+                        <br />
                         <span
                           onClick={() => setRes(false)}
-                          className="text-green-500 cursor-pointer"
+                          className="text-green-500 cursor-pointer font-bold"
                         >
                           {" "}
-                          change
+                         - Click here to Change - 
                         </span>
                       </p>
+                      <br />
                       <p className="text-slate-600 text-sm">
-                        Email to spamashop@gmail.com
+                        Email us at spamashop@gmail.com for any issues regarding your order/s.
                       </p>
                     </div>
                   )}
@@ -277,7 +272,11 @@ const Shipping = () => {
                         </div>
                         <div className="flex justify-end w-5/12 sm:w-full sm:mt-3">
                           <div className="pl-4 sm:pl-0">
-                            <h2 className="text-lg text-orange-500">
+                            <p className="line-through">
+                              ₱{pt.productInfo.price}
+                            </p>
+                            <p>-{pt.productInfo.discount}%</p>
+                            <h2 className="text-lg text-green-500">
                               ₱
                               {pt.productInfo.price -
                                 Math.floor(
@@ -286,10 +285,6 @@ const Shipping = () => {
                                     100
                                 )}
                             </h2>
-                            <p className="line-through">
-                              ₱{pt.productInfo.price}
-                            </p>
-                            <p>-{pt.productInfo.discount}%</p>
                           </div>
                         </div>
                       </div>
@@ -303,26 +298,18 @@ const Shipping = () => {
                 <div className="bg-white font-medium p-5 text-slate-600 flex flex-col gap-3">
                   <h2 className="text-xl font-semibold">Order Summary</h2>
                   <div className="flex justify-between items-center">
-                    <span>Items Total({price})</span>
-                    <span>₱{price}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Delivery Fee</span>
-                    <span>₱{shipping_fee}</span>
+                    <span>Total Item/s </span>
+                    <span>{items}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Total Payment</span>
-                    <span>₱{price + shipping_fee}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Total</span>
-                    <span>₱{price + shipping_fee}</span>
+                    <span className="text-green-500">₱{price}.00</span>
                   </div>
                   <button
                     onClick={placeOrder}
                     disabled={res ? false : true}
-                    className={`px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg ${
-                      res ? "bg-orange-500" : "bg-orange-300"
+                    className={`px-5 py-[6px] rounded-sm hover:shadow-orange-green/20 hover:shadow-lg ${
+                      res ? "bg-green-500" : "bg-green-300"
                     } text-sm text-white uppercase`}
                   >
                     Place Order

@@ -62,8 +62,9 @@ const OrderDetails = () => {
         </div>
         <div className="p-4">
           <div className="flex gap-2 text-lg text-[#d0d2d6]">
-            <h2>#{order._id}</h2>
-            <span>{order.date}</span>
+            <h2>{order._id}</h2>
+            <br></br>
+            <span>Date & Time: {order.date}</span>
           </div>
           <div className="flex flex-wrap">
             <div className="w-[32%]">
@@ -100,7 +101,7 @@ const OrderDetails = () => {
                             <p>
                               <span>Brand : </span>
                               <span>{p.brand} </span>
-                              <span className="text-lg">
+                              <span className="text-lg"> <br />
                                 Quantity : {p.quantity}
                               </span>
                             </p>
