@@ -58,12 +58,12 @@ const Orders = () => {
                     <div className='w-full text-sm text-left text-[#d0d2d6]'>
                         <div className='text-sm text-[#d0d2d6] uppercase border-b border-slate-700'>
                             <div className='flex justify-between items-start'>
-                                <div className='py-3 w-[25%]'>Order Id</div>
-                                <div className='py-3 w-[13%]'>Price</div>
-                                <div className='py-3 w-[18%]'>Payment Status</div>
-                                <div className='py-3 w-[18%]'>Date & Time</div> 
-                                <div className='py-3 w-[18%]'>Action</div>
-                                <div className='py-3 w-[8%]'>
+                                <div className='font-bold py-3 w-[25%]'>Order Id</div>
+                                <div className='font-bold py-3 w-[13%]'>Price</div>
+                                <div className='font-bold py-3 w-[18%]'>Payment Status</div>
+                                <div className='font-bold py-3 w-[18%]'>Date & Time</div> 
+                                <div className='font-bold py-3 w-[18%]'>Action</div>
+                                <div className='font-bold py-3 w-[8%]'>
                                     Details
                                 </div>
                             </div>
